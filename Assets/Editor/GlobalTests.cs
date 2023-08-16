@@ -47,7 +47,7 @@ namespace Editor
         [Test]
         public void TestGenericAndTypePerformNotificationsAreEqual()
         {
-            var perform1 = Global.PrepareNotification<Foo>();
+            var perform1 = Global.PerformNotification<Foo>();
             var foo = new Foo();
             var perform2 = Global.PerformNotification(foo.GetType());
             Assert.AreEqual(perform1, perform2);

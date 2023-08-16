@@ -146,4 +146,19 @@ namespace DefaultNamespace.Systems
         }
         #endregion
     }
+
+    public static class ActionSystemExtensions
+    {
+        public static void Perform(this IContainer game, GameAction action)
+        {
+            var actionSystem = game.GetAspect<ActionSystem>();
+            actionSystem.Perform(action);
+        }
+
+        public static void AddReaction(this IContainer game, GameAction action)
+        {
+            var actionSystem = game.GetAspect<ActionSystem>();
+            actionSystem.AddReaction(action);
+        }
+    }
 }
